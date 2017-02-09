@@ -16,3 +16,12 @@ en:
     help:
       heading: "Help Pages"
       caption: "Find me in app/views/static_pages/help.html.erb"
+  users:
+    error_find_user: "Couldn't find this user. Please try again!"
+    welcome: "Welcome to the Book Reviewing System!"
+    confirm: "Confirmation"
+    create_account: "Create my account"
+    heading: "Sign up"
+  shared:
+    error_message: "The form contains"
+    error: "error"
