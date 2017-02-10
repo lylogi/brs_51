@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="book-details">
+    <div class="col-sm-3">
+      <div class="view-book">
+        <%= image_tag @book.cover.url if @book.cover? %>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="book-information">
+        <h3><%= @book.title %></h3>
+        <p>
+          <%= t "admin.book.show_author" %>
+          <%= @book.author_name %>
+        </p>
+        <p>
+          <b><%= t "admin.book.publishdate" %></b>
+          <%= @book.publish_date %>
+        </p>
+        <p>
+          <b><%= t "admin.book.pages" %></b>
+          <%= @book.pages %>
+        </p>
+        <p>
+          <b><%= t "admin.book.show_category" %></b>
+          <%= @book.category.name %>
+        </p>
+        <p>
+          <b><%= t "admin.book.description" %></b>
+          <%= @book.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

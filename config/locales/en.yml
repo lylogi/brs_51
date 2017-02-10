@@ -45,6 +45,8 @@ en:
     view_profile: "view my profile"
     following: "Following"
     followers: "Followers"
+  book:
+    list_books: "List books"
   controller:
     invalid_email: "Invalid email/password combination"
   admin:
@@ -66,7 +68,6 @@ en:
       cover_size: "should be less than 5MB"
       not_find: "Couldn't find this book. Please try again!"
       book_id: "Id"
-      category: "Category"
       cover: "Image"
       title: "Title"
       author: "Author"
@@ -79,6 +80,11 @@ en:
       active: "Active"
       delete_button: "Delete"
       delete_confirm: "You sure?"
+      pages: "Pages: "
+      publishdate: "Publish date: "
+      show_category: "Category: "
+      show_author: "Author: "
+      description: "Description: "
     login:
       danger: "Please log in!"
   flash:
