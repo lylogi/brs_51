@@ -1,0 +1,34 @@
+<div class="review-card">
+  <span>
+    <%= review.user.name %>
+  </span>
+  <span class="time-ago-in-words pull-right">
+    <%= time_ago_in_words review.created_at %>
+    <%= t "review.ago" %>
+  </span>
+  <div>
+    <%= t "review.rating" %>
+    <span class="review-rating" data-score="<%= review.rate %>" ></span>
+  </div>
+  <div>
+    <%= t "review.content" %>
+    <%= review.content %>
+  </div>
+  <div>
+    <center>
+    </center>
+  </div>
+  <div>
+    <% if current_user.current_user? review.user %>
+      <%= link_to t("admin.book.edit_button"),
+        edit_book_review_path(review.book, review), class: "btn btn-success" %>
+      <%= link_to t("admin.book.delete_button"),
+        book_review_path(review.book, review),
+        method: :delete, data: {confirm: t("admin.book.delete_confirm")},
+        class: "btn btn-success" %>
+    <% end %>
+  </div>
+  <div class="comments">
+    <%= render review.comments %>
+  </div>
+</div>
