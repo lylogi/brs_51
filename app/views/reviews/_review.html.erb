@@ -1,23 +1,24 @@
 <div class="review-card">
-  <span>
-    <%= review.user.name %>
-  </span>
-  <span class="time-ago-in-words pull-right">
-    <%= time_ago_in_words review.created_at %>
-    <%= t "review.ago" %>
-  </span>
-  <div>
-    <%= t "review.rating" %>
-    <span class="review-rating" data-score="<%= review.rate %>" ></span>
-  </div>
-  <div>
-    <%= t "review.content" %>
-    <%= review.content %>
-  </div>
-  <div>
-    <center>
-    </center>
-  </div>
+  <ul class="users follow">
+    <li>
+      <%= gravatar_for review.user, size: 30 %>
+      <%= link_to review.user.name, review.user %>
+    </li>
+    <li>
+      <span class="time-ago-in-words pull-right">
+        <%= time_ago_in_words(review.created_at) %>
+        <%= t("views.activities.ago") %>
+      </span>
+      <div>
+        <%= t "views.reviews.rating" %>
+        <span class="review-rating" ><%= review.rate %></span>
+      </div>
+      <div>
+        <%= t "views.reviews.content" %>
+        <%= review.content %>
+      </div>
+    </li>
+  </ul>
   <div>
     <% if current_user.current_user? review.user %>
       <%= link_to t("admin.book.edit_button"),
@@ -29,6 +30,24 @@
     <% end %>
   </div>
   <div class="comments">
-    <%= render review.comments %>
+    <ul class="users follow">
+      <li>
+        <%= gravatar_for current_user, size: 30 %>
+        <%= link_to current_user.name, current_user %>
+      </li>
+      <li>
+        <%= form_for [@book, review, @comment], remote: true do |f| %>
+          <div class="col-sm-10 user-add-comment">
+            <%= f.text_area :content, class: "form-control" %>
+          </div>
+          <div class="col-sm-2">
+            <%= f.submit t("review.submit"), class: "btn btn-warning" %>
+          </div>
+        <% end %>
+      </li>
+      <div id="view-comments-<%= review.id%>">
+        <%= render review.comments.order_by_time %>
+      </div>
+    </ul>
   </div>
 </div>

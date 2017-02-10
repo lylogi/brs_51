@@ -6,4 +6,6 @@ class Review < ApplicationRecord
 
   validates :rate, presence: true
   validates :content, presence: true
+
+  scope :order_by_time, -> {order created_at: :desc}
 end

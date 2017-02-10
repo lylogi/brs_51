@@ -67,3 +67,16 @@ h2.title {
     text-transform: uppercase;
   }
 }
+
+.comments {
+  padding-left: 3em;
+}
+
+.comment {
+  padding-top: 0.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.form_edit_comment {
+  display:none;
+}
