@@ -1,0 +1,12 @@
+<div class="col-md-10">
+  <div class="books">
+    <% @books_search.each do |book| %>
+      <div class="col-md-4">
+        <%= image_tag book.cover.url if book.cover? %>
+        <h3><%= link_to book.title, book %></h3>
+        <%= t "book.author_name" %><%= book.author_name %><br>
+      </div>
+    <% end %>
+  </div>
+
+</div>

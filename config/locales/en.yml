@@ -20,6 +20,7 @@ en:
     all_users: "All users"
     confirmation: "Confirmation"
     request: "Request"
+    book: "Books"
   static_pages:
     home:
       heading: "Book Reviewing System"
@@ -48,6 +49,22 @@ en:
     followers: "Followers"
   book:
     list_books: "List books"
+    search_book: "Search book"
+    category: "category"
+    search: "Search"
+    all: "All"
+    author_name: "Author name: "
+  review:
+    submit: "Submit"
+    success: "New review is added"
+    success_update: "Update success"
+    success_delete: "Destroy success"
+    danger_delete: "Can't delete this review"
+    not_find: "Couldn't find this review. Please try again!"
+    add_review: "Add reivew"
+    rating: "Rating"
+    ago: "ago"
+    content: "Content"
   controller:
     invalid_email: "Invalid email/password combination"
   admin:
