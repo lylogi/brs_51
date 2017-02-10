@@ -34,7 +34,17 @@ en:
   controller:
     invalid_email: "Invalid email/password combination"
   admin:
+    category:
+      dashboard: "DashBoard"
+      new_category: "New category"
+      category_id: "Id"
+      description: "Description"
+      create_category: "New category"
+      edit_category: "Save changes"
+      heading_edit: "Update category"
+      active: "Active"
     book:
+      dashboard: "DashBoard"
       create_book: "Create new boook"
       new_book: "New book"
       category: "Category"
@@ -60,3 +70,9 @@ en:
   flash:
     destroy_success: "Book is deleted"
     destroy_error: "Book is not deleted"
+    error_find_catagory: "Couldn't find this user. Please try again!"
+    success_category: "New category is added"
+    update_category: "Category updated"
+    not_find_category: "Couldn't find this category. Please try again!"
+    destroy_category_success: "Category is deleted"
+    destroy_category_error: "Category is not deleted"

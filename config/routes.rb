@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   namespace :admin do
+    resources :categories, except: :show
     resources :books
   end
 end
