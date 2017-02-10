@@ -7,10 +7,16 @@ en:
     home: "Home"
     logo: "Framgia"
     log_in: "Log in"
+    log_out: "Log out"
     contact: "Contact"
+    sign_up: "Sign up now!"
+    setting: "Setting"
+    profile: "Profile"
+    user: "Users"
+    acount: "Acount"
+    new_user: "New user?"
   static_pages:
     home:
-      sign_up: "Sign up now!"
       heading: "Book Reviewing System"
       caption: "This is the home page training Book Review System of Framgia"
     help:
@@ -25,3 +31,5 @@ en:
   shared:
     error_message: "The form contains"
     error: "error"
+  controller:
+    invalid_email: "Invalid email/password combination"
