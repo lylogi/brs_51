@@ -1,6 +1,7 @@
 class Admin::BooksController < ApplicationController
   before_action :verify_admin, except: :show
-  before_action :find_book, only: :show
+  before_action :find_book, except: [:index, :new, :create]
+  before_action :load_categories, except: :index
 
   def index
     @books = Book.all
@@ -8,7 +9,6 @@ class Admin::BooksController < ApplicationController
 
   def new
     @book = Book.new
-    @categories = Category.all
   end
 
   def create
@@ -17,12 +17,32 @@ class Admin::BooksController < ApplicationController
       flash[:success] = t "admin.book.success"
       redirect_to admin_books_path
     else
-      @categories = Category.all	
       render :new
     end
   end
 
   def show
+  end
+
+  def edit
+  end
+  
+  def update
+    if @book.update_attributes book_params
+      flash[:success] = t "admin.book.success_update"
+      redirect_to admin_book_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @book.destroy
+      flash[:success] = t "flash.destroy_success"
+    else
+      flash[:danger] = t "flash.destroy_error"
+    end
+    redirect_to admin_books_url
   end
 
   private
@@ -37,5 +57,9 @@ class Admin::BooksController < ApplicationController
       flash[:warning] = t "admin.book.not_find"
       redirect_to root_url
     end
+  end
+
+  def load_categories
+    @categories = Category.all
   end
 end

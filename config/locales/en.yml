@@ -48,5 +48,15 @@ en:
       author: "Author"
       numberofpage: "Number of pages"
       publish_date: "Publish Date"
+      success_update: "Book updated"
+      edit_book: "Save changes"
+      heading_edit: "Update book"
+      edit_button: "Edit"
+      active: "Active"
+      delete_button: "Delete"
+      delete_confirm: "You sure?"
     login:
       danger: "Please log in!"
+  flash:
+    destroy_success: "Book is deleted"
+    destroy_error: "Book is not deleted"
