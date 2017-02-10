@@ -1,0 +1,3 @@
+$('#like_book_form').html('<%= j render "books/unlike" %>');
+$('#user-like_stats').html('<%= @book.favorites.count %>');
+$('#list_user_like_book').html('<%= j render @book.favorites %>');

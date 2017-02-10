@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('.comment_edit').click(function(){
-    $(this.nextElementSibling).show();
+    $(this).text($(this).text() == "Cancel" ? "Edit": "Cancel");
+    $(this.nextElementSibling).toggle();
   });
 });

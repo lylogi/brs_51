@@ -37,6 +37,8 @@ en:
     heading: "Sign up"
     follow: "Follow"
     unfollow: "Unfollow"
+    like: "Like"
+    unlike: "Unlike"
     edit:
       title: "Edit user"
       heading: "Udate your profile"

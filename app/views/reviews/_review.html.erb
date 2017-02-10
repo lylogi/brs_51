@@ -36,9 +36,9 @@
         <%= link_to current_user.name, current_user %>
       </li>
       <li>
-        <%= form_for [@book, review, @comment], remote: true do |f| %>
+        <%= form_for [@book, review, @support.comment], remote: true do |f| %>
           <div class="col-sm-10 user-add-comment">
-            <%= f.text_area :content, class: "form-control" %>
+            <%= f.text_area :content, class: "comment-area form-control" %>
           </div>
           <div class="col-sm-2">
             <%= f.submit t("review.submit"), class: "btn btn-warning" %>

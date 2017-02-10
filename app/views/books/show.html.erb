@@ -33,13 +33,25 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-9 col-sm-offset-3">
+  <div class="col-sm-3">
+    <div class="text-center">
+      <%= render "like_form" if logged_in? %>
+    </div>
+    <section class="stats">
+      <div class="user_avatars" id="list_user_like_book">
+        <%= render partial: "favorites/favorite",
+          collection: @support.favorites, as: :favorite %>
+      </div>
+    </section>
+  </div>
+  <div class="col-sm-9">
     <div>
       <%= link_to t("review.add_review"), new_book_review_path(@book),
         class: "btn btn-info" %>
     </div>
     <div id="view-reivews">
-      <%= render @reviews %>
+      <%= render partial: "reviews/review",
+        collection: @support.reviews, as: :review %>
     </div>
   </div>
 </div>

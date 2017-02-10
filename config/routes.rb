@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   resources :users do
     get "/:relationship", on: :member,
       to: "relationships#index", as: :relationships
+    resources :favorites, only: [:create, :destroy]
   end
+  
   resources :relationships, only: [:create, :destroy]
   resources :requests, exept: [:new]
   
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
     resources :reviews, except: :index do
       resources :comments, only: [:create, :update, :destroy]
     end
+    resources :reading_statuses, only: [:create, :update]
   end
 
   namespace :admin do
