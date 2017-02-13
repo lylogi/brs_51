@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
 
+  get "/edit", to: "users#edit"
+  post "/update", to: "users#update"
+
   delete "/logout", to: "sessions#destroy"
   
-  resources :users, only: :show
+  resources :users, exept: [:destroy] 
 
   namespace :admin do
     resources :categories, except: :show
     resources :books
   end
+
 end
