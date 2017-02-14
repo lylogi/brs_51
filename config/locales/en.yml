@@ -33,3 +33,20 @@ en:
     error: "error"
   controller:
     invalid_email: "Invalid email/password combination"
+  admin:
+    book:
+      create_book: "Create new boook"
+      new_book: "New book"
+      category: "Category"
+      success: "New book is added"
+      cover_size: "should be less than 5MB"
+      not_find: "Couldn't find this book. Please try again!"
+      book_id: "Id"
+      category: "Category"
+      cover: "Image"
+      title: "Title"
+      author: "Author"
+      numberofpage: "Number of pages"
+      publish_date: "Publish Date"
+    login:
+      danger: "Please log in!"

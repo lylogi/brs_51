@@ -1,0 +1,9 @@
+<h1><%= t "admin.book.dashboard" %></h1>
+<% @books.each do |book| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= render book %>
+    </div>
+  </div>
+<% end %>
+<%= link_to t("admin.book.new_book"), new_admin_book_path %>
