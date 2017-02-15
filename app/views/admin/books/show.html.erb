@@ -1,6 +1,12 @@
 <h1><%= t "admin.book.dashboard" %></h1>
   <div class="panel panel-default">
     <div class="panel-body">
+      <h3><%= @book.title %></h3>
+      <%= image_tag @book.cover.url, class: "img-responsive" if @book.cover? %>
+      <h4><%= @book.author_name %></h4>
+      <h4><%= @book.pages %></h4>
+      <h5><%= @book.publish_date %></h5>
+      <p><%= @book.description %></p>
       <%= render @book %>
     </div>
   </div>
