@@ -1,0 +1,27 @@
+<h1><%= t "admin.category.dashboard" %></h1>
+<table class="table table-hover">
+  <tr>
+    <th><%= t "admin.category.category_id" %></th>
+    <th><%= t "admin.category.name" %></th>
+    <th><%= t "admin.category.description" %></th>
+    <th><%= t "admin.category.active" %></th>
+  </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.name %></td>
+      <td><%= category.description %></td>
+      <td>
+        <span>
+          <%= link_to t("admin.book.edit_button"), edit_admin_category_url(category),
+            class: "btn btn-info" %>
+          <%= link_to t("admin.book.delete_button"), admin_category_url(category),
+            method: :delete, data: {confirm: t("admin.book.delete_confirm")},
+              class: "btn btn-danger" %>
+        </span>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to t("admin.category.new_category"), new_admin_category_path,
+  class: "btn btn-info" %>
