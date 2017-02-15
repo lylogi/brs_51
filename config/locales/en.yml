@@ -12,9 +12,13 @@ en:
     sign_up: "Sign up now!"
     setting: "Setting"
     profile: "Profile"
+    setting: "Settings"
     user: "Users"
     acount: "Acount"
     new_user: "New user?"
+    please_login: "Please log in."
+    all_users: "All users"
+    confirmation: "Confirmation"
   static_pages:
     home:
       heading: "Book Reviewing System"
@@ -28,6 +32,11 @@ en:
     confirm: "Confirmation"
     create_account: "Create my account"
     heading: "Sign up"
+    edit:
+      title: "Edit user"
+      heading: "Udate your profile"
+      change: "Change"
+      save_change: "Save change"
   shared:
     error_message: "The form contains"
     error: "error"
@@ -76,3 +85,4 @@ en:
     not_find_category: "Couldn't find this category. Please try again!"
     destroy_category_success: "Category is deleted"
     destroy_category_error: "Category is not deleted"
+    update_success: "Updated Profile"

@@ -22,6 +22,8 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  scope :activated, -> {where activated: true}
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -32,6 +34,10 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def current_user? user
+    self == user
   end
 
   private
