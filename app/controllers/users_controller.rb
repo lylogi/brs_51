@@ -6,6 +6,14 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate page: params[:page]
   end
+
+  def show
+    if current_user.following? @user
+      @relationship = current_user.active_relationships.find_by followed_id: @user.id
+    else
+      @relationship = current_user.active_relationships.build
+    end
+  end
   
   def new
     @user = User.new
@@ -19,9 +27,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def show
   end
 
   def edit
@@ -37,14 +42,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t "layouts.please_login"
-      redirect_to login_url
-    end
-  end
-
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation

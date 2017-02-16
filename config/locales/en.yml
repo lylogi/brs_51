@@ -32,6 +32,8 @@ en:
     confirm: "Confirmation"
     create_account: "Create my account"
     heading: "Sign up"
+    follow: "Follow"
+    unfollow: "Unfollow"
     edit:
       title: "Edit user"
       heading: "Udate your profile"
@@ -40,6 +42,9 @@ en:
   shared:
     error_message: "The form contains"
     error: "error"
+    view_profile: "view my profile"
+    following: "Following"
+    followers: "Followers"
   controller:
     invalid_email: "Invalid email/password combination"
   admin:
