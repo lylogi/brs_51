@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1 padding-right">
+    <div class="features_items">
+      <h2 class="title text-center"><%= t"book.list_books"%></h2>
+      <% @books.each do |book| %>
+        <div class="col-sm-3">
+          <div class="book-image-wrapper">
+            <div class="single-books">
+              <div class="bookinfo text-center">
+                <%= link_to image_tag(book.cover.url), book,
+                  class: "img-responsive" if book.cover? %>
+                <h4><%= link_to book.title, book %></h4>
+                <p><%= book.author_name %></p>
+                <p><%= book.publish_date %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>

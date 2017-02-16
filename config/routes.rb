@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   post "/update", to: "users#update"
 
   delete "/logout", to: "sessions#destroy"
-
+  
+  resources :books, only: [:index, :show]
   resources :users, except: [:new]
   resources :users do
     get "/:relationship", on: :member,
