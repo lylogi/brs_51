@@ -103,6 +103,7 @@ en:
     request_destroy_error: "Requests is not deleted"
   requests:
     error_find_request: "Couldn't find this requests"
+  requests:
     new:
       titlle: "Requests"
       create_requests: "Create new request"

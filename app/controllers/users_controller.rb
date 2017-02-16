@@ -8,11 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.following? @user
-      @relationship = current_user.active_relationships.find_by followed_id: @user.id
-    else
-      @relationship = current_user.active_relationships.build
-    end
+    @relationship = current_user.active_relationships.build
   end
   
   def new
@@ -23,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t "users.welcome"
+      log_in @user
       redirect_to @user
     else
       render :new
