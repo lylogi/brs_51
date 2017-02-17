@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       to: "relationships#index", as: :relationships
   end
   resources :relationships, only: [:create, :destroy]
+  resources :requests, exept: [:new]
   
   namespace :admin do
     resources :categories, except: :show

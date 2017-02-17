@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20170209093633) do
     t.string   "title"
     t.date     "publish_date"
     t.string   "author_name"
+    t.text     "content"
     t.integer  "pages"
     t.integer  "user_id"
     t.integer  "status",       default: 0, null: false

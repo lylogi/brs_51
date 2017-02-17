@@ -19,6 +19,7 @@ en:
     please_login: "Please log in."
     all_users: "All users"
     confirmation: "Confirmation"
+    request: "Request"
   static_pages:
     home:
       heading: "Book Reviewing System"
@@ -97,3 +98,21 @@ en:
     destroy_category_success: "Category is deleted"
     destroy_category_error: "Category is not deleted"
     update_success: "Updated Profile"
+    create_success: "Create success"
+    request_destroy: "Requests is deleted"
+    request_destroy_error: "Requests is not deleted"
+  requests:
+    error_find_request: "Couldn't find this requests"
+    new:
+      titlle: "Requests"
+      create_requests: "Create new request"
+      heading: "Requests Book"
+    index:
+      heading: "Book requests"
+      id: "Id"
+      title: "Title"
+      author: "Author name"
+      content: "Content"
+      detele: "Detele"
+      delete_confirm: "Are you sure?"
+      newrequest: "New request"
