@@ -6,8 +6,12 @@
         <li><%= link_to image_tag("icon_search.png"), "#" %></li>
         <li><%= link_to t("layouts.home"), "#" %></li>
         <% if logged_in? %>
-          <li><%= link_to t("layouts.request"), requests_path %></li>
-          <li><%= link_to t("layouts.user"), users_path %></li>
+          <% if current_user.is_admin? %>
+            <li><%= link_to t("app.requests"), admin_requests_path %></li>
+          <% else %>
+            <li><%= link_to t("layouts.user"), users_path %></li>
+            <li><%= link_to t("layouts.request"), requests_path %></li>
+          <% end %>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
               <%= t("layouts.acount") %>

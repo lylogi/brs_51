@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   
   resources :books, only: [:index, :show]
-  resources :users, except: [:new]
+  resources :users, except: [:new, :destroy]
   resources :users do
     get "/:relationship", on: :member,
       to: "relationships#index", as: :relationships
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories, except: :show
     resources :books
+    resources :requests, only: [:index, :destroy]
   end
 
 end
