@@ -10,4 +10,6 @@ class Book < ApplicationRecord
   validates :author_name, presence: true, length: {maximum: 50}
   validates :pages, presence: true
   validates :publish_date, presence: true
+
+  scope :order_by_time, -> {order created_at: :desc}
 end

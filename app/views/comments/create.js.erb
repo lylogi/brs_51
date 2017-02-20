@@ -1,0 +1,2 @@
+$('#view-comments-<%= @review.id %>').html('<%= j render @review.comments.order_by_time %>');
+$('textarea#comment_content').val('');

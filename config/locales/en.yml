@@ -21,6 +21,7 @@ en:
     confirmation: "Confirmation"
     request: "Request"
     book: "Books"
+    cancel: "Cancel"
   static_pages:
     home:
       heading: "Book Reviewing System"
@@ -60,6 +61,10 @@ en:
     rating: "Rating"
     ago: "ago"
     content: "Content"
+    add_comment: "Add comment"
+  comment:
+    success_create: "New comment is added"
+    content: "Please insert comment!"
   controller:
     invalid_email: "Invalid email/password combination"
   admin:

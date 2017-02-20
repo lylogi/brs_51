@@ -1,0 +1,25 @@
+<li id="content-comment-<%= comment.id %>">
+  <%= gravatar_for comment.user, size: 30 %>
+  <%= link_to comment.user.name, comment.user %>
+  <%= time_ago_in_words comment.created_at %>
+  <%= t "review.ago" %>
+  <div>
+    <%= comment.content %>
+    <% if current_user.current_user? comment.user %>
+      <%= link_to t("admin.book.delete_button"),
+        book_review_comment_path(comment.review.book, comment.review, comment),
+        method: :delete, data: {confirm: t("admin.book.delete_confirm")},
+        remote: true %>
+      <button class="comment_edit" ><%= t("admin.book.edit_button") %></button>
+      <%= form_for [comment.review.book, comment.review, comment], 
+        html: {class: "form_edit_comment"}, remote: true do |f| %>
+        <div class="col-sm-10 user-add-comment">
+          <%= f.text_area :content, class: "form-control" %>
+        </div>
+        <div class="col-sm-2">
+          <%= f.submit t("review.submit"), class: "btn btn-warning" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</li>

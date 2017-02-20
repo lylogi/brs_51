@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "static_pages#home", page: "home"
   
   get "/static_pages/page", to: "static_pages#home"
@@ -23,7 +24,9 @@ Rails.application.routes.draw do
   resources :requests, exept: [:new]
   
   resources :books, only: [:index, :show] do
-    resources :reviews, except: :index
+    resources :reviews, except: :index do
+      resources :comments, only: [:create, :update, :destroy]
+    end
   end
 
   namespace :admin do

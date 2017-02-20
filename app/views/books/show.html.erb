@@ -33,11 +33,13 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-sm-9 col-sm-offset-3">
     <div>
       <%= link_to t("review.add_review"), new_book_review_path(@book),
         class: "btn btn-info" %>
     </div>
-    <%= render @book.reviews %>
+    <div id="view-reivews">
+      <%= render @reviews %>
+    </div>
   </div>
 </div>
