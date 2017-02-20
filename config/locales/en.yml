@@ -50,6 +50,11 @@ en:
     followers: "Followers"
   book:
     list_books: "List books"
+    search_book: "Search book"
+    category: "Category"
+    search: "Search"
+    all: "All"
+    author_name: "Author name: "
   review:
     submit: "Submit"
     success: "New review is added"

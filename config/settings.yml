@@ -1,2 +1,4 @@
 per_page: 12 
 array_numbers: [1, 2, 3, 4, 5]
+book:
+ per_page: 6
