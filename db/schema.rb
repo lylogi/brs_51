@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209093633) do
+ActiveRecord::Schema.define(version: 20170220132805) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 20170209093633) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id", "user_id"], name: "index_favorites_on_book_id_and_user_id", unique: true
+    t.index ["book_id"], name: "index_favorites_on_book_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "activity_id"
@@ -70,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170209093633) do
     t.boolean  "is_favorite", default: false, null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.index ["book_id", "user_id"], name: "index_reading_statuses_on_book_id_and_user_id", unique: true
     t.index ["book_id"], name: "index_reading_statuses_on_book_id"
     t.index ["user_id"], name: "index_reading_statuses_on_user_id"
   end

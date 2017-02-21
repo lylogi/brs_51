@@ -1,3 +1,8 @@
-$("#view-comments-<%= @review.id %>").html("<%= j render @review.comments %>");
-$(".form_edit_comment").off("click");
-$(".comment_edit").off("click");
+$('#view-comments-<%= @review.id %>').html('<%= j render @review.comments.order_by_time %>');
+$('.form_edit_comment').off('click');
+$('.comment_edit').off('click');
+$('.comment_edit').click(function(){
+  $(this).text($(this).text() == '<%= t("layouts.cancel") %>' ?
+    '<%= t"admin.book.edit_button" %>': '<%= t("layouts.cancel") %>');
+  $(this.nextElementSibling).toggle();
+});

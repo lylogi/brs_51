@@ -1,0 +1,15 @@
+<% unless current_user.current_user? @user %>
+  <span id="like_book_form">
+    <% if @support.check_favorite(current_user.id).present? %>
+      <%= render "unlike" %>
+    <% else %>
+      <%= render "like" %>
+    <% end %>
+  </span>
+<% end %>
+<span id="user-like_stats" class="like-user-count">
+  <%= @support.favorites.count %>
+</span>
+<span>
+  <%= t "views.activities.likes" %>
+</span>

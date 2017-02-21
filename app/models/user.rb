@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :requests, dependent: :destroy
-  has_many :statuses, dependent: :destroy
+  has_many :reading_statuses, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,

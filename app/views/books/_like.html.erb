@@ -1,0 +1,4 @@
+<%= link_to user_favorites_path(current_user,
+  favorite: {book_id: @book.id}), method: :post, remote: :true do %>
+  <i class="unlike-button glyphicon glyphicon-thumbs-down"></i>
+<% end %>

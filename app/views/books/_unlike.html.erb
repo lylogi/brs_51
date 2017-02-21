@@ -1,0 +1,6 @@
+<%= link_to user_favorite_path(current_user, @favorite ||
+  @support.check_favorite(current_user.id),
+  favorite: {book_id: @book.id}),
+  method: :delete, remote: :true do %>
+  <i class="glyphicon glyphicon-thumbs-up"></i>
+<% end %>

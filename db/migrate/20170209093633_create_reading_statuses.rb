@@ -8,5 +8,6 @@ class CreateReadingStatuses < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :reading_statuses, [:book_id, :user_id], unique:true
   end
 end

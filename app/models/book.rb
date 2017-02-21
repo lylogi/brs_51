@@ -3,6 +3,7 @@ class Book < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :reading_statuses, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   mount_uploader :cover, CoverUploader
 
