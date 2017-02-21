@@ -1,13 +1,45 @@
 <h1><%= t "admin.book.dashboard" %></h1>
   <div class="panel panel-default">
-    <div class="panel-body">
-      <h3><%= @book.title %></h3>
-      <%= image_tag @book.cover.url, class: "img-responsive" if @book.cover? %>
-      <h4><%= @book.author_name %></h4>
-      <h4><%= @book.pages %></h4>
-      <h5><%= @book.publish_date %></h5>
-      <p><%= @book.description %></p>
-      <%= render @book %>
+    <div class="book-details">
+      <div class="col-sm-3">
+        <div class="view-book">
+          <%= image_tag @book.cover.url if @book.cover? %>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="book-information">
+          <h3><%= @book.title %></h3>
+          <p>
+            <%= t "admin.book.show_author" %>
+            <%= @book.author_name %>
+          </p>
+          <p>
+            <b><%= t "admin.book.publishdate" %></b>
+            <%= @book.publish_date %>
+          </p>
+          <p>
+            <b><%= t "admin.book.pages" %></b>
+            <%= @book.pages %>
+          </p>
+          <p>
+            <b><%= t "admin.book.show_category" %></b>
+            <%= @book.category.name %>
+          </p>
+          <p>
+            <b><%= t "admin.book.description" %></b>
+            <%= @book.description %>
+          </p>
+        </div>
+      </div>
     </div>
+      <span>
+        <%= link_to t("admin.book.edit_button"), edit_admin_book_url(@book),
+          class: "btn btn-info" %>
+        <%= link_to t("admin.book.delete_button"), admin_book_url(@book),
+          method: :delete, data: {confirm: t("admin.book.delete_confirm")},
+          class: "btn btn-danger" %>
+        <%= link_to t("admin.book.back_button"), admin_books_path,
+          class: "btn btn-warning" %>
+      </span>
   </div>
 <%= link_to t("admin.book.new_book"), new_admin_book_path %>

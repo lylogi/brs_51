@@ -4,10 +4,12 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to image_tag("icon_search.png"), "#" %></li>
-        <li><%= link_to t("layouts.home"), "#" %></li>
+        <li><%= link_to t("layouts.home"), current_user %></li>
         <% if logged_in? %>
           <% if current_user.is_admin? %>
-            <li><%= link_to t("app.requests"), admin_requests_path %></li>
+            <li><%= link_to t("layouts.categories"), admin_categories_path %></li>
+            <li><%= link_to t("layouts.books"), admin_books_path %></li>
+            <li><%= link_to t("layouts.requests"), admin_requests_path %></li>
           <% else %>
             <li><%= link_to t("layouts.user"), users_path %></li>
             <li><%= link_to t("layouts.book"), books_path %></li>

@@ -53,7 +53,7 @@ en:
   book:
     list_books: "List books"
     search_book: "Search book"
-    category: "Category"
+    category: "category"
     search: "Search"
     all: "All"
     author_name: "Author name: "
@@ -110,6 +110,7 @@ en:
       show_category: "Category: "
       show_author: "Author: "
       description: "Description: "
+      back_button: "Back"
     login:
       danger: "Please log in!"
   flash:

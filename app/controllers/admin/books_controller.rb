@@ -4,7 +4,11 @@ class Admin::BooksController < ApplicationController
   before_action :load_categories, except: :index
 
   def index
-    @books = Book.order_by_time
+    @categories = Category.all
+    @books = Book.by_category(params[:category])
+      .search_book_by_search_params(params[:search])
+      .order_by_time
+      .paginate page: params[:page], per_page: Settings.per_page
   end
 
   def new
@@ -22,6 +26,7 @@ class Admin::BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find_by id: params[:id]
   end
 
   def edit

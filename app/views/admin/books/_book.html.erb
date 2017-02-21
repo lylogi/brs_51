@@ -1,7 +1,33 @@
-<span>
-  <%= link_to t("admin.book.edit_button"), edit_admin_book_url(book),
-    class: "btn btn-info" %>
-  <%= link_to t("admin.book.delete_button"), admin_book_url(book),
-    method: :delete, data: {confirm: t("admin.book.delete_confirm")},
-    class: "btn btn-danger" %>
-</span>
+<table class="table table-hover">
+  <tr>
+    <th><%= t "admin.book.bood_id" %></th>
+    <th><%= t "admin.book.cover" %></th>
+    <th><%= t "admin.book.title" %></th>
+    <th><%= t "admin.book.author_name" %></th>
+    <th><%= t "admin.book.pages" %></th>
+    <th><%= t "admin.book.publish_date" %></th>
+    <th><%= t "admin.book.active" %></th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= book.id %></td>
+      <td>
+        <%= link_to image_tag(book.cover.url), admin_book_path(book),
+          class: "img-responsive" if book.cover? %>
+      </td>
+      <td><%= book.title %></td>
+      <td><%= book.author_name %></td>
+      <td><%= book.pages %></td>
+      <td><%= book.publish_date %></td>
+      <td>
+        <span>
+          <%= link_to t("admin.book.edit_button"), edit_admin_book_url(book),
+          class: "btn btn-info" %>
+          <%= link_to t("admin.book.delete_button"), admin_book_url(book),
+          method: :delete, data: {confirm: t("admin.book.delete_confirm")},
+          class: "btn btn-danger" %>
+        </span>
+      </td>
+    </tr>
+  <% end %>
+</table>
