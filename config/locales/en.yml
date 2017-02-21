@@ -141,3 +141,5 @@ en:
       detele: "Detele"
       delete_confirm: "Are you sure?"
       newrequest: "New request"
+  favorite:
+    favorites: "Favorites"

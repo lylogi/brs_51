@@ -14,5 +14,14 @@
   </aside>
   <div class="col-md-8">
     <%= render "follow_form" if logged_in? %>
+    <div class="col-md-8">
+      <h3><%= t("favorite.favorites")%> (<%= @user.favorites.count %>)</h3>
+      <% if @user.favorites.any? %>
+        <ol class="@favorites">
+          <%= render @favorites %>
+        </ol>
+        <%= will_paginate @favorites %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,1 +1,10 @@
-<%= link_to gravatar_for(favorite.user, size: Settings.size), favorite.user %>
+<li id="favorite-<%= favorite.id %>">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag favorite.book.cover.url if favorite.book.cover? %>
+    </div>
+    <div class="col-md-9">
+      <h3><%= link_to favorite.book.title, favorite.book %></h3>
+      <%= t "book.author_name" %><%= favorite.book.author_name %>
+    </div>
+</li>

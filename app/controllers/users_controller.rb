@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @relationship = current_user.active_relationships.build
+    @favorites = @user.favorites.paginate(page: params[:page])
   end
   
   def new
