@@ -51,7 +51,7 @@ en:
   book:
     list_books: "List books"
     search_book: "Search book"
-    category: "Category"
+    category: "category"
     search: "Search"
     all: "All"
     author_name: "Author name: "
